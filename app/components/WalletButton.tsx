@@ -70,7 +70,7 @@ export default function WalletButton() {
 
   // Only EVM wallets, no Farcaster connector
   const walletConnectors = connectors.filter(
-    (c) => c.name !== 'Farcaster Mini App' && isEvmConnector(c)
+    (c) => !c.name.toLowerCase().includes('farcaster') && isEvmConnector(c)
   );
 
   if (walletConnectors.length === 0) {

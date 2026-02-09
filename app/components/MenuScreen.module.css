@@ -1,0 +1,75 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: rgba(10, 10, 26, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #f0b90b, #e74c3c, #f39c12);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  text-shadow: none;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2rem;
+}
+
+.player {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.highScore {
+  font-size: 1.1rem;
+  color: #f0b90b;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.playButton {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  padding: 1rem 4rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 16px;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(231, 76, 60, 0.4);
+}
+
+.playButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(231, 76, 60, 0.6);
+}
+
+.playButton:active {
+  transform: scale(0.98);
+}
+
+.connectHint {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}

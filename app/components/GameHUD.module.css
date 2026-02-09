@@ -1,0 +1,52 @@
+.hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  padding: 1rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.score {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.lives {
+  display: flex;
+  gap: 4px;
+  font-size: 1.5rem;
+}
+
+.heartFull {
+  color: #e74c3c;
+  filter: drop-shadow(0 0 4px rgba(231, 76, 60, 0.6));
+}
+
+.heartEmpty {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.comboBar {
+  position: absolute;
+  top: 3.5rem;
+  left: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f0b90b;
+  text-shadow: 0 0 10px rgba(240, 185, 11, 0.5);
+  animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

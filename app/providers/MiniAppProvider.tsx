@@ -24,12 +24,19 @@ export function MiniAppProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const init = async () => {
-      const isInApp = await sdk.isInMiniApp();
-      if (isInApp) {
-        const ctx = await sdk.context;
-        setContext(ctx);
-        await sdk.actions.ready();
-        setIsReady(true);
+      try {
+        const isInApp = await Promise.race([
+          sdk.isInMiniApp(),
+          new Promise<false>((resolve) => setTimeout(() => resolve(false), 2000)),
+        ]);
+        if (isInApp) {
+          const ctx = await sdk.context;
+          setContext(ctx);
+          await sdk.actions.ready();
+          setIsReady(true);
+        }
+      } catch {
+        // Not in Farcaster mini app — wallet-only mode
       }
     };
     init();
